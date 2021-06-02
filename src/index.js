@@ -1,12 +1,51 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import styled, { createGlobalStyle } from 'styled-components';
+
+const Global = createGlobalStyle`
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      border: 0;
+      font-family: Manrope, sans-serif;
+      color: var(--text-main);
+      outline: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:active {
+        outline: none;
+      }
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #135dff;
+    border-radius: 8px;
+  }
+
+  :root {
+    --bg: #101113;
+    --text-main: #fff;
+    --text-gray: #acacac;
+  }
+`;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Global />
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
