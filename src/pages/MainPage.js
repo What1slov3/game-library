@@ -16,6 +16,10 @@ const StyledCardContainer = styled.div`
   padding: 0 0 20px 10px;
   height: calc(100vh - 173px);
   overflow: auto;
+
+  @media (max-width: 500px) {
+    height: calc(100vh - 248px);
+  }
 `;
 
 const StyledNothing = styled.div`
